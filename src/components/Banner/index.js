@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import Search from "../Search"
 
+import { useRouter } from "next/router"
+
 import { withStyles } from "@material-ui/core/styles"
 
 import { Button } from "@material-ui/core"
@@ -32,6 +34,8 @@ const SearchStyles = withStyles({
 })(Button)
 
 const Banner = () => {
+  const router = useRouter()
+
   const [showSearch, setShowSearch] = useState(false)
   return (
     <div className="banner">
@@ -49,7 +53,9 @@ const Banner = () => {
         <h5>
           Plan a different kind of getaway to oncover the hidden gens near you
         </h5>
-        <StyledButton variant="outlined">Explore Nearby</StyledButton>
+        <StyledButton onClick={() => router.push("/search")} variant="outlined">
+          Explore Nearby
+        </StyledButton>
       </div>
       <style jsx>{`
         .banner {

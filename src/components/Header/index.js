@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 import SearchIcon from "@material-ui/icons/Search"
 import AccountCircleIcon from "@material-ui/icons/AccountCircle"
 import LanguageIcon from "@material-ui/icons/Language"
@@ -7,10 +8,12 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 const Header = () => {
   return (
     <div className="header">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1024px-Airbnb_Logo_B%C3%A9lo.svg.png"
-        alt=""
-      />
+      <Link href="/">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1024px-Airbnb_Logo_B%C3%A9lo.svg.png"
+          alt=""
+        />
+      </Link>
       <div className="header_center">
         <input type="text" />
         <SearchIcon />

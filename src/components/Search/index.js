@@ -2,6 +2,8 @@ import "react-date-range/dist/styles.css" // main style file
 import "react-date-range/dist/theme/default.css" // theme css file
 
 import React, { useState } from "react"
+import { useRouter } from "next/router"
+
 import { DateRangePicker } from "react-date-range"
 import { withStyles } from "@material-ui/core/styles"
 import { Button } from "@material-ui/core"
@@ -23,6 +25,8 @@ const SearchButton = withStyles({
 })(Button)
 //DATA picker component
 const Search = () => {
+  const router = useRouter()
+
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
 
@@ -43,7 +47,9 @@ const Search = () => {
         Number of guests <PeopleIcon />
       </h2>
       <input min={0} defaultValue={2} type="number" />
-      <SearchButton>Search Airbnb</SearchButton>
+      <SearchButton onClick={() => router.push("/search")}>
+        Search Airbnb
+      </SearchButton>
       <style jsx>{`
         .search {
           position: absolute;
